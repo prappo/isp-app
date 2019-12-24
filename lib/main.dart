@@ -69,9 +69,9 @@ class _MyHomePageState extends State<MyHomePage> {
               );
             },
           ),
-          title: Center(child: Text('ISP',style: TextStyle(
-            fontSize: 30.0
-          ),)),
+          title: Center(
+              child: Image.asset('assets/logo.png',width: 30,)
+          ),
           actions: <Widget>[
             IconButton(
               icon: new Icon(Icons.search,size: 20.0,),
