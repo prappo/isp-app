@@ -4,17 +4,30 @@ import 'package:flutter/material.dart';
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Color(0xffE8EEF5),
-      child: Column(
+    return ListView(
+      children: <Widget>[
+        Container(
 
-        children: <Widget>[
-          SizedBox(
-            height: 10.0,
+          color: Color(0xffE8EEF5),
+          child: Column(
+
+            children: <Widget>[
+              SizedBox(
+                height: 10.0,
+              ),
+              BalanceSection(),
+              BalanceSection(),
+              BalanceSection(),
+              BalanceSection(),
+              BalanceSection(),
+              BalanceSection(),
+
+
+
+            ],
           ),
-         BalanceSection(),
-        ],
-      ),
+        )
+      ],
     );
   }
 }

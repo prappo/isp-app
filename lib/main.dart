@@ -1,3 +1,4 @@
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:ecommerce/pages/home.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -38,6 +39,24 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
 
     return Scaffold(
+
+      bottomNavigationBar: CurvedNavigationBar(
+        backgroundColor: Color(0xffE8EEF5),
+        animationDuration: Duration(milliseconds: 200),
+
+        index: 2,
+
+        items: <Widget>[
+          Icon(Icons.play_arrow, size: 30),
+          Icon(Icons.tv, size: 30),
+          Icon(Icons.home, size: 30),
+          Icon(Icons.rss_feed, size: 30),
+          Icon(Icons.account_circle, size: 30),
+        ],
+        onTap: (index) {
+          //Handle button tap
+        },
+      ),
 
         appBar: AppBar(
 
