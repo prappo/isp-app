@@ -1,7 +1,9 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:ecommerce/pages/home.dart';
+import 'package:ecommerce/sections/preview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:flutter/services.dart';
 
 void main() => runApp(MyApp());
 
@@ -37,7 +39,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-
+    SystemChrome.setEnabledSystemUIOverlays([]);
     return Scaffold(
 
       bottomNavigationBar: CurvedNavigationBar(
@@ -48,8 +50,13 @@ class _MyHomePageState extends State<MyHomePage> {
         index: 2,
 
         items: <Widget>[
-          Icon(Icons.play_arrow, size: 30),
-          Icon(Icons.tv, size: 30),
+          GestureDetector(
+              child: Icon(Icons.play_arrow, size: 30),
+            onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context) => PreviewSection()));
+            },
+          ),
+          Icon(Icons.tv, size: 30,),
           Icon(Icons.home, size: 30),
           Icon(Icons.rss_feed, size: 30),
           Icon(Icons.account_circle, size: 30),

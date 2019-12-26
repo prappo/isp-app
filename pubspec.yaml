@@ -49,6 +49,10 @@ flutter:
   assets:
     - assets/
     - balance_background.jpg
+    - assets/icons/cricket.png
+    - assets/icons/football.png
+    - assets/icons/trophy.png
+    - assets/icons/live.png
     - logo.png
 
   #  - images/a_dot_ham.jpeg
