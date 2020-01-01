@@ -23,6 +23,7 @@ dependencies:
   video_player: ^0.10.5
   flutter_simple_video_player: ^0.0.9
   rect_getter: ^0.0.1
+  webview_flutter: ^0.3.18+1
   http:
   provider: 3.0.0+1
   rflutter_alert: ^1.0.3

@@ -7,12 +7,15 @@ class PreviewSection extends StatelessWidget {
   PreviewSection(this.channel);
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 300.0,
+    return Scaffold(
+      body: Container(
+        color: Colors.blue,
+//        height: 300.0,
 //      child: SimpleViewPlayer("http://27.147.156.14:1935/Durunto-TV/Duronto-TV.stream/playlist.m3u8", isFullScreen: false,),
-      child: SimpleViewPlayer(
-        channel.path,
-        isFullScreen: false,
+        child: SimpleViewPlayer(
+          channel.path,
+          isFullScreen: false,
+        ),
       ),
     );
   }
