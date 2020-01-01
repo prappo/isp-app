@@ -23,7 +23,7 @@ class ProfileSection extends StatelessWidget {
                   SizedBox(
                     width: 10,
                   ),
-                  Text('Shreya',
+                  Text('You',
                     style: TextStyle(
                       fontSize: 20
                     ),

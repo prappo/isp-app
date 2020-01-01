@@ -72,7 +72,7 @@ class BalanceSection extends StatelessWidget {
                               color: Colors.white, fontWeight: FontWeight.bold),
                         ),
                         Text(
-                          '500',
+                          '0',
                           style: TextStyle(
                             fontSize: 40.0,
                             color: Colors.white,

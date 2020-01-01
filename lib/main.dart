@@ -8,21 +8,16 @@ import 'package:flutter/services.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'ISP',
       theme: ThemeData(
-
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(
-          title: 'ISP'
-      ),
+      home: MyHomePage(title: 'ISP'),
     );
   }
 }
@@ -39,9 +34,8 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setEnabledSystemUIOverlays([]);
+//    SystemChrome.setEnabledSystemUIOverlays([]);
     return Scaffold(
-
       bottomNavigationBar: CurvedNavigationBar(
 //        backgroundColor: Color(0xffE8EEF5),
         backgroundColor: Colors.blue,
@@ -51,12 +45,15 @@ class _MyHomePageState extends State<MyHomePage> {
 
         items: <Widget>[
           GestureDetector(
-              child: Icon(Icons.play_arrow, size: 30),
-            onTap: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context) => PreviewSection()));
+            child: Icon(Icons.play_arrow, size: 30),
+            onTap: () {
+
             },
           ),
-          Icon(Icons.tv, size: 30,),
+          Icon(
+            Icons.tv,
+            size: 30,
+          ),
           Icon(Icons.home, size: 30),
           Icon(Icons.rss_feed, size: 30),
           Icon(Icons.account_circle, size: 30),
@@ -66,28 +63,34 @@ class _MyHomePageState extends State<MyHomePage> {
         },
       ),
 
-        appBar: AppBar(
-
-          leading: Builder(
-            builder: (BuildContext context) {
-              return IconButton(
-                icon: const Icon(Icons.notifications,size: 20.0,),
-                onPressed: () => print('hi on menu icon'),
-              );
-            },
-          ),
-          title: Center(
-              child: Image.asset('assets/logo.png',width: 30,)
-          ),
-          actions: <Widget>[
-            IconButton(
-              icon: new Icon(Icons.search,size: 20.0,),
-              onPressed: () => print('hi on icon action'),
+      appBar: AppBar(
+        leading: Builder(
+          builder: (BuildContext context) {
+            return IconButton(
+              icon: const Icon(
+                Icons.notifications,
+                size: 20.0,
+              ),
+              onPressed: () => print('hi on menu icon'),
+            );
+          },
+        ),
+        title: Center(
+            child: Image.asset(
+          'assets/logo.png',
+          width: 30,
+        )),
+        actions: <Widget>[
+          IconButton(
+            icon: new Icon(
+              Icons.search,
+              size: 20.0,
             ),
-          ],
-        )
-,
-        body: HomePage(),
+            onPressed: () => print('hi on icon action'),
+          ),
+        ],
+      ),
+      body: HomePage(),
 
       // This trailing comma makes auto-formatting nicer for build methods.
     );
