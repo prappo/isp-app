@@ -1,3 +1,4 @@
+import 'package:ecommerce/config.dart';
 import 'package:ecommerce/models/channels.dart';
 import 'package:ecommerce/sections/preview.dart';
 import 'package:flutter/cupertino.dart';
@@ -8,8 +9,8 @@ import 'dart:convert';
 
 class TvSection extends StatelessWidget {
   Future<List<Channel>> getTvChannel() async {
-    var data =
-        await http.get("http://103.109.213.138/api/v1/get/featured/channels");
+    var config = Config();
+    var data = await http.get(config.getApiURL() + "/get/featured/channels");
     var jsonData = json.decode(data.body);
 
     List<Channel> channels = [];

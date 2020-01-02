@@ -68,7 +68,6 @@ class _MyHomePageState extends State<MyHomePage> {
           setState(() {
             _currentIndex = index;
           });
-
         },
       ),
 
@@ -77,22 +76,24 @@ class _MyHomePageState extends State<MyHomePage> {
           builder: (BuildContext context) {
             return IconButton(
               icon: const Icon(
-                Icons.notifications,
+                Icons.menu,
                 size: 20.0,
               ),
-              onPressed: () => print('hi on menu icon'),
+              onPressed: () {
+                Scaffold.of(context).openDrawer();
+              },
             );
           },
         ),
         title: Center(
             child: Image.asset(
           'assets/logo.png',
-          width: 30,
+          width: 45,
         )),
         actions: <Widget>[
           IconButton(
             icon: new Icon(
-              Icons.search,
+              Icons.notifications,
               size: 20.0,
             ),
             onPressed: () => print('hi on icon action'),
@@ -100,6 +101,42 @@ class _MyHomePageState extends State<MyHomePage> {
         ],
       ),
       body: tabs[_currentIndex],
+
+      drawer: Drawer(
+        // Add a ListView to the drawer. This ensures the user can scroll
+        // through the options in the drawer if there isn't enough vertical
+        // space to fit everything.
+        child: ListView(
+          // Important: Remove any padding from the ListView.
+          padding: EdgeInsets.zero,
+          children: <Widget>[
+            DrawerHeader(
+              child: Text('Drawer Header'),
+              decoration: BoxDecoration(
+                color: Colors.blue,
+              ),
+            ),
+            ListTile(
+              title: Text('Item 1'),
+              onTap: () {
+                // Update the state of the app
+                // ...
+                // Then close the drawer
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              title: Text('Item 2'),
+              onTap: () {
+                // Update the state of the app
+                // ...
+                // Then close the drawer
+                Navigator.pop(context);
+              },
+            ),
+          ],
+        ),
+      ),
 
       // This trailing comma makes auto-formatting nicer for build methods.
     );
